@@ -1,45 +1,34 @@
-# FoodSystem - Restaurant Management System
+# 🍽️ FoodSystem - Restaurant Management System
 
-## Project Description
-FoodSystem is a web-based Restaurant Management System developed using Laravel, PHP, and MySQL.  
-It allows managing menu items, tables, orders, users, and offers in an organized and efficient way.
+Web‑based Restaurant Management System built with **Laravel, PHP & MySQL** to manage tables, menu items, orders, users, and billing.
 
----
+## 🚀 Features
 
-## Features
-- User and role management (Admin, Waiter, Cashier, Kitchen Staff)
-- Manage categories, menu items, and products
-- Table management and reservations
-- Order processing (instant and scheduled)
-- Admin dashboard with statistics
-- Create offers and discounts for menu items
-- Billing and printing system
+- User & Role Management (Admin / Waiter / Cashier)  
+- Add / Edit / Delete Categories, Menu Items, Products  
+- Table Management and Reservations  
+- Order Processing (Quick and Scheduled)  
+- Admin Dashboard with Stats  
+- Billing & Print Invoices
 
----
 
-## Requirements
-- PHP >= 8.1
-- MySQL
-- Composer
-- Node.js and npm (for frontend assets)
-- Laravel >= 10.x
+## 📥 Installation / Setup (Local)
 
----
-
-## Installation
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/SAMIR-ALSAIED/FoodSystem-.git
+1. **Clone the repository**  
+```bash
+git clone https://github.com/SAMIR-ALSAIED/FoodSystem.git
 
 composer install
-npm install
-npm run dev
-
+npm install && npm run dev
 cp .env.example .env
 
-php artisan migrate --seed
+php artisan key:generate
 
+------------------------------------
+Run Migrations & Seed Data
+php artisan migrate --seed
+-------------------------
+Start the server:
 php artisan serve
 
 
