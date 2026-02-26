@@ -9,6 +9,10 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Reservation\AddReservationRequest;
 use App\Http\Requests\Front\StoreReservationRequest;
 
+use Illuminate\Support\Facades\Mail;
+use App\Mail\TestMail;
+
+
 class ReservationController extends Controller
 {
 
@@ -40,7 +44,7 @@ public function store(StoreReservationRequest $request)
     }
 
     // إنشاء الحجز
-    Reservation::create([
+   $reservation = Reservation::create([
         'table_id' => $data['table_id'],
         'customer_name' => $data['customer_name'],
         'phone' => $data['customer_phone'], // الاسم مطابق للعمود في DB
@@ -48,6 +52,9 @@ public function store(StoreReservationRequest $request)
         'datetime' => $data['datetime'],
         'status' => 'في الانتظار',
     ]);
+
+    Mail::to('samiralsaied07@gmail.com')->send(new TestMail($reservation));
+
 
     return redirect()->back()->with('success', 'تم حجز الطاولة بنجاح!');
 }

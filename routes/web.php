@@ -26,8 +26,10 @@ Route::get('/menu', [HomeController::class, 'menu'])
 
 Route::get('/menu/category/{categoryId}', [HomeController::class, 'menu'])
     ->name('front.menu.filter');
+    
 
-//
+//reservation
+
 
 
     Route::get('/reservation', [ReservationController::class, 'create'])
@@ -38,9 +40,7 @@ Route::post('/reservation', [ReservationController::class, 'store'])
     ->name('front.reservation.store');
 
 
-
-
-
+// cart
 
 Route::get('/cart', [CartController::class, 'index'])->name('front.cart.index');
 Route::post('/cart/add', [CartController::class, 'add'])->name('front.cart.add');
